@@ -1,9 +1,7 @@
 #! /bin/sh
 print "Content-Type: text/html\n\n";
 mpc clear
-mpc stop
-systemctl stop mpd.socket 
-/etc/init.d/mpd stop
+mpc stop;systemctl stop mpd.socket;killall -s 9 mpd;/etc/init.d/mpd stop
 sudo umount -f /mnt/NAS/*
 sudo umount -l /mnt/NAS/*
 sudo rm -r /mnt/NAS*
@@ -17,8 +15,7 @@ sudo chmod -R 777 /mnt/NAS
 cd /var/lib/mpd/music/
 sudo ln -s /mnt/NAS /var/lib/mpd/music/NAS
 sudo chmod -R 777 /var/lib/mpd/music
-/etc/init.d/mpd start
+service mpd start;/etc/init.d/mpd start
+sleep 2
 mpc update NAS
 exit 0
-echo  $? "External Network Drive Deleted. !!!!!"
-
