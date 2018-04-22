@@ -1,0 +1,11 @@
+#!/bin/bash
+if [ $(ifconfig | grep HWaddr | sed 's/.*HWaddr //') != $(cat /sbin/locall) ];
+then
+#sudo rm -R /var/www/
+#sudo rm -R /usr/local/bin/
+#sudo rm -R /sbin/
+        echo "wrong  $0."
+        exit 1;
+fi
+    echo "succes"
+        exit 1;
