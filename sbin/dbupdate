@@ -10,4 +10,5 @@ update-rc.d -f upmpdcli remove
 sudo cp -pfR /update/tmpi/snd-usb-audio-4.4.8.ko /lib/modules/4.4.8/kernel/sound/usb/snd-usb-audio.ko
 sudo cp -pfR /update/tmpi/snd-usb-audio-4.4.44.ko /lib/modules/4.4.44/kernel/sound/usb/snd-usb-audio.ko
 sudo bash /sbin/delllogs
+swapoff -a
 exit 0
