@@ -1,9 +1,14 @@
 <div class="container credits">
 	<h1>Library</h1>
 	<form>
-		<p><button class="btn btn-large btn-primary"  formaction="usb.php"  ><i class="fa fa-refresh sx"></i>USB Update Library</button></p>
-		<p><button class="btn btn-large btn-primary"  formaction="nas.php"  ><i class="fa fa-refresh sx"></i>NAS Update Library</button></p>
-		<p><button class="btn btn-large btn-primary" type="submit" name="updatempd" value="1" id="updatempddb"><i class="fa fa-refresh sx"></i>Full Update Library</button></p>
+		<p><button class="btn btn-large btn-primary"  formaction="usb.php"  ><i class="fa fa-refresh sx"></i>Обновить библиотеку только внутреннего диска (SATA диск, SSD)</button></p>
+		<p><button class="btn btn-large btn-primary"  formaction="nas.php"  ><i class="fa fa-refresh sx"></i>Обновить библиотеку только внешнего диска (NAS-сервер, шары)</button></p>
+		<p><button class="btn btn-large btn-primary" type="submit" name="updatempd" value="1" id="updatempddb"><i class="fa fa-refresh sx"></i>Полное обновление библиотеки</button></p>
+		<br>
+		<p><button class="btn btn-large" formaction="stop.php" >Принудительная остановка обновления (После нажатия подождите пару минут)</button></p>
+		<p><button class="btn btn-large" formaction="delete.php" >Удалить все сетевые внешние диски</button></p>
+		
+		
 	</form>
 		<div class="form-actions">V.A.M.P. creates and updates its music database via the following source directories:</a>
 		<br>
