@@ -52,8 +52,7 @@ eval("echoTemplate(\"".getTemplate("templates/$tpl")."\");");
 <?php
 		$cmd = 'mpc update NAS';
 		sysCmd($cmd);
-		echo "Update NAS mount-drive running! ";
-		sleep(5);
+
 ?>
 
 <script type="text/javascript">
