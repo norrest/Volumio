@@ -1,4 +1,4 @@
 #! /bin/sh
 print "Content-Type: text/html\n\n";
-sudo mpc stop;systemctl stop mpd.socket;/etc/init.d/mpd stop;service mpd start;/etc/init.d/mpd start
+mpc stop;systemctl stop mpd.socket;killall -s 9 mpd;/etc/init.d/mpd stop;service mpd start;/etc/init.d/mpd start
 exit 0
