@@ -52,8 +52,7 @@ eval("echoTemplate(\"".getTemplate("templates/$tpl")."\");");
 <?php
 		$cmd = 'mpc update USB';
 		sysCmd($cmd);
-		echo "Update internal drive running! ";
-		sleep(5);
+
 ?>
 		
 <script type="text/javascript">
