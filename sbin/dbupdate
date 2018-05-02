@@ -10,5 +10,7 @@ update-rc.d -f upmpdcli remove
 sudo cp -pfR /update/tmpi/snd-usb-audio-4.4.8.ko /lib/modules/4.4.8/kernel/sound/usb/snd-usb-audio.ko
 sudo cp -pfR /update/tmpi/snd-usb-audio-4.4.44.ko /lib/modules/4.4.44/kernel/sound/usb/snd-usb-audio.ko
 sudo bash /sbin/delllogs
+sed -i 's/disp.screen0_output_mode=1920x1080p60/monitor=none net.ifnames=0 biosdevname=0/' /boot/boot.cmd
+mkimage -C none -A arm -T script -d /boot/boot.cmd /boot/boot.scr 
 swapoff -a
 exit 0
