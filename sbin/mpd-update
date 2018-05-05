@@ -11,6 +11,7 @@ wget http://digitall.in.ua/mpd.tar.bz2
 mkdir ./mpd
 tar -xjvf mpd.tar.bz2 -C ./mpd
 cd ./mpd
+systemctl stop mpd.socket & /etc/init.d/mpd stop
 make install&&bash /sbin/update-mpd-final
 rm -R /root/*mpd*
 fi
