@@ -5,4 +5,4 @@ strip /usr/local/bin/mpd
 ln -s /usr/local/bin/mpd /usr/bin/mpd
 chmod 777 /etc/mpd.conf
 service mpd restart
-
+exit 0
