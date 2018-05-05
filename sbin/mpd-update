@@ -2,7 +2,7 @@
 mpdver="$(mpd -V | grep Music | cut -d "0" -f 2,3)" 
 mpdver="${mpdver%.*-*}"        # remove suffix starting with '.' and containing '-'
 mpdver="${mpdver//.}"          # remove periods (a single `/` would do here)
-newver="2015"
+newver="2019"
 if [ "$mpdver" -ne "$newver" ];
 then
 echo "Обновление MPD"
