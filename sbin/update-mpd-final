@@ -1,0 +1,8 @@
+#! /bin/sh
+mv /usr/bin/mpd /usr/bin/mpd_old
+chmod 777 /etc/init.d/mpd
+strip /usr/local/bin/mpd
+ln -s /usr/local/bin/mpd /usr/bin/mpd
+chmod 777 /etc/mpd.conf
+service mpd restart
+
