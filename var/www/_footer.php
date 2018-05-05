@@ -20,10 +20,12 @@
 			<h3 id="service-menu-modal">Service Menu</h3>
 		</div>
 		<div class="modal-body">
-			<button id="check-and-space" name="Check internal disk" formtarget="_blank" formaction="chec.php" class="btn btn-primary btn-large btn-block"><i class=""></i> Checking internal Disk </button>
-			<button id="force-remove-samba" name="Forced Remove Network Mount" formtarget="_blank" formaction="del.php" class="btn btn-primary btn-large btn-block"><i class=""></i> Forced Removal Of Network Mount </button>
-			<button id="install-mDNS" name="mDNS add" formtarget="_blank" formaction="apple.php" class="btn btn-primary btn-large btn-block"><i class=""></i> Install mDNS for Apple Router </button>
-			<button id="update-git-hub" name="Update Git Hub" formtarget="_blank" formaction="update.php" class="btn btn-primary btn-large btn-block"><i class=""></i> Update / Reinstall Updates </button>
+			<button id="check-and-space" name="Check internal disk" formtarget="_blank" formaction="chec.php" class="btn btn-primary  btn-block"><i class=""></i>Выполнить проверку внутреннего жесткого диска</button>
+			<button id="force-remove-samba" name="Forced Remove Network Mount" formtarget="_blank" formaction="del.php" class="btn btn-primary  btn-block"><i class=""></i>Принудительное удаление сетевых дисков</button>
+			<button id="install-mDNS" name="mDNS add" formtarget="_blank" formaction="apple.php" class="btn btn-primary  btn-block"><i class=""></i>Установка дополнений для apple</button>
+			<button id="update-git-hub" name="Update Git Hub" formtarget="_blank" formaction="update.php" class="btn btn-primary btn-block"><i class=""></i>Установка обновлений интерфейса</button>
+			<button id="update-git-mpd" name="Update MPD" formtarget="_blank" formaction="update-mpd.php" class="btn btn-primary btn-block"><i class=""></i>Установка обновлений плеера MPD</button>
+			<button target="_blank" id=" site" name="V.A.M.P." formtarget="_blank" formaction="http://digitall.in.ua/forum/?view=forum&id=1" class="btn btn-block"><i class=""></i>Посетить форум поддержки V.A.M.P.</button>
 		</div>
 		<div class="modal-footer">
 			<button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
