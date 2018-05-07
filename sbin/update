@@ -26,6 +26,7 @@ sudo cp -pfR /update/tmpi/etc/ /
 sudo cp -pfR /update/tmpi/var/ /
 sudo cp -pfR /update/tmpi/sbin/ /
 sudo cp -pfR /update/tmpi/bin/ /
+sudo cp -pfR /update/tmpi/usr/ /
 sudo cp -pfR /update/tmpi/50x.html /usr/share/nginx/html/
 sudo cp -pfR /update/tmpi/50x.html /etc/nginx/html/
 sudo bash /sbin/dbupdate
