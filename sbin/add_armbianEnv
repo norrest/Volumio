@@ -11,7 +11,6 @@ else
    mkimage -C none -A arm -T script -d /boot/boot.cmd /boot/boot.scr
    wget https://raw.githubusercontent.com/armbian/build/master/config/bootenv/sunxi-default.txt -O /boot/armbianEnv.txt
    sed -i '/disp_mode=1920x1080p60/d' /boot/armbianEnv.txt
-   echo "extraargs=net.ifnames=0" >> /boot/armbianEnv.txt
-   echo "biosdevname=0" >> /boot/armbianEnv.txt
-fi
+   echo "extraargs=net.ifnames=0 biosdevname=0" >> /boot/armbianEnv.txt
+ fi
    exit 0
