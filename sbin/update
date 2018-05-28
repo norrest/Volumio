@@ -38,10 +38,13 @@ sudo rm -R /update/tmpi
 sudo rm -R /sbin/dbupdate
 sudo mkdir /var/lib/mpd/playlists/
 sudo chmod -R 777 /var/lib/mpd/playlists/
+sudo mkdir /var/lib/mpd/music/WEBRADIO/
+sudo chmod -R 777 /var/lib/mpd/music/WEBRADIO/
 /etc/init.d/mpd start
 echo "$(tput setaf 1)[+] If you see no errors, everything is done perfectly!"
 sudo service php5-fpm restart && sudo service nginx restart
-       exit 1;
+       echo "If you see many errors, please contact admin@digitall.in.ua"   
+       exit 0;
 fi
-    echo "old ver"   
-       exit 1;
+       echo "old ver, please contact admin@digitall.in.ua"   
+       exit 0;
