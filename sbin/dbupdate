@@ -8,7 +8,6 @@ update-rc.d -f minidlna remove
 update-rc.d -f upmpdcli remove
 (echo root; echo root) | smbpasswd -a -s root
 sudo bash /sbin/delllogs
-sed -i 's/disp.screen0_output_mode=1920x1080p60/monitor=none net.ifnames=0 biosdevname=0/' /boot/boot.cmd
-mkimage -C none -A arm -T script -d /boot/boot.cmd /boot/boot.scr 
 swapoff -a
+bash /sbin/add_armbianEnv
 exit 0
