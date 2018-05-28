@@ -1,0 +1,17 @@
+#!/bin/bash
+FILE="/boot/armbianEnv.txt"
+if [ -f $FILE ]; then
+   echo "The configuration file '$FILE' is already available!"
+else
+   echo "The configuration file '$FILE' does not exist, we create it."
+   mv /boot/boot.cmd /boot/boot.cmd.old
+   wget https://raw.githubusercontent.com/armbian/build/master/config/bootscripts/boot-sunxi.cmd -O /boot/boot.cmd
+   sed -i 's/disp.screen0_output_mode=${disp_mode}/monitor=none/' /boot/boot.cmd
+   mv /boot/boot.scr /boot/boot.scr.old
+   mkimage -C none -A arm -T script -d /boot/boot.cmd /boot/boot.scr
+   wget https://raw.githubusercontent.com/armbian/build/master/config/bootenv/sunxi-default.txt -O /boot/armbianEnv.txt
+   sed -i '/disp_mode=1920x1080p60/d' /boot/armbianEnv.txt
+   echo "extraargs=net.ifnames=0" >> /boot/armbianEnv.txt
+   echo "biosdevname=0" >> /boot/armbianEnv.txt
+fi
+   exit 0
