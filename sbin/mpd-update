@@ -14,6 +14,7 @@ cd ./mpd
 systemctl stop mpd.socket & /etc/init.d/mpd stop
 make install&&bash /sbin/update-mpd-final
 rm -R /root/*mpd*
+echo "Версия MPD обновлена"
 exit 0
 fi
 echo "Версия MPD не нуждается в обновлении"
