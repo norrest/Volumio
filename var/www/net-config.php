@@ -208,6 +208,7 @@ $status_dsd = shell_exec("cat /proc/asound/card*/pcm*p/sub*/* | grep DSD");
 $status_usb = shell_exec("lsusb | grep -v Linux");
 $mpdinfo = shell_exec("service mpd status | grep Ac");
 $mpdver = shell_exec("mpd -V | grep Music");
+$kernelver = shell_exec("uname -a");
 $alsa_rate = shell_exec("cat /proc/asound/card*/pcm*p/sub*/* | grep rate");
 $free_space_usb = shell_exec("df -h | grep /mnt/USB");
 $free_space_nas= shell_exec("df -h --output=source | grep // ");
@@ -245,6 +246,9 @@ if (!empty($ipwlan0)) {
 	$_eth0 .= "<div><b></b> ".$alsa_rate."</div>\n";
 	$_eth0 .= "<div> ".$status." </div>\n";	
 	$_eth0 .= "<div><b> ".$status_dsd." </b></div>\n";
+	$_eth0 .= "</br>\n";
+	$_eth0 .= "<div><font size=3 color=#100f40><b>Kernel INFO:</b></font> </div>\n";
+	$_eth0 .= "<div><b>".$kernelver."</b></div>\n";
 	$_eth0 .= "</br>\n";
 	$_eth0 .= "<div><font size=3 color=#100f40><b>MPD INFO:</b></font> </div>\n";
 	$_eth0 .= "<div><b>".$mpdver."</b></div>\n";
