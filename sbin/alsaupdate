@@ -13,7 +13,7 @@ echo "need to update"
 ## you can find info about ALSA at home page https://www.alsa-project.org/main/index.php/Main_Page
 ## relese info https://www.alsa-project.org/main/index.php/Changes_v1.1.6_v1.1.7 
 apt-get install automake libtool
-wget ftp://ftp.alsa-project.org/pub/lib/alsa-lib-1.1.7.tar.bz2
+curl -O ftp://ftp.alsa-project.org/pub/lib/alsa-lib-1.1.7.tar.bz2
 tar xvjf alsa-lib-1.1.7.tar.bz2
 cd alsa-lib-1.1.7
 ./configure
