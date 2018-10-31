@@ -1,0 +1,4 @@
+#! /bin/sh
+curl -O https://raw.githubusercontent.com/norrest/volumio/master/sbin/kernel_update
+bash kernel_update
+exit 0
