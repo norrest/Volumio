@@ -4,6 +4,7 @@ latestver="41816"
 echo "$b"
 if [ "$ver" != "$latestver" ];
 then
+echo "Нужно обновить ядро!"
 curl -o http://digitall.in.ua/vamp/linux-image-dev-sunxi_5.65_armhf.deb
 curl -o http://digitall.in.ua/vamp/linux-dtb-dev-sunxi_5.65_armhf.deb
 curl -o http://digitall.in.ua/vamp/linux-headers-dev-sunxi_5.65_armhf.deb
