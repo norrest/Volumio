@@ -1,6 +1,6 @@
 #!/bin/bash
 ver="$(uname -r  | sed -e 's/[^0-9]//g')"  # get kernel release version
-latestver="422"
+latestver="4202"
 echo "$b"
 if [ "$ver" != "$latestver" ];
 then
