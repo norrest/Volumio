@@ -23,7 +23,7 @@
 			<p>Сервисные функции </p>
 			<button id="check-and-space" name="Check internal disk" formtarget="_blank" formaction="chec.php" class="btn btn-primary  btn-block"><i class=""></i>Выполнить проверку внутреннего жесткого диска</button>
 			<button id="force-remove-samba" name="Forced Remove Network Mount" formtarget="_blank" formaction="del.php" class="btn btn-primary  btn-block"><i class=""></i>Принудительное удаление сетевых дисков</button>
-			<button id="force-stop-web" onclick="return confirm('Вы действительно хотите отключить веб-интерфейс плеера? Чтобы его включить, плеер нужно полностью выключить и включить!)" name="Stop Web V.A.M.P." formtarget="_blank" formaction="stopweb.php" class="btn btn-primary  btn-block"><i class=""></i> <font color="red">Выключить WEB-интерфейс</font></button>
+			<button id="force-stop-web" onclick="return confirm('Вы действительно хотите отключить веб-интерфейс плеера? Чтобы его включить, плеер нужно полностью выключить и включить!')" name="Stop Web V.A.M.P." formtarget="_blank" formaction="stopweb.php" class="btn btn-primary  btn-block"><i class=""></i> <font color="red">Выключить WEB-интерфейс</font></button>
 			<p>Функции обвновления </p>
 			<button id="update-git-hub" name="Update Git Hub" formtarget="_blank" formaction="update.php" class="btn btn-primary btn-block"><i class=""></i><font color="green">Установка обновлений интерфейса</font></button>
 			<button id="install-mDNS" name="mDNS add" formtarget="_blank" formaction="apple.php" class="btn btn-primary  btn-block"><i class=""></i>Установка дополнений для apple</button>
