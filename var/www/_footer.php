@@ -5,8 +5,8 @@
 			<h3 id="poweroff-modal-label">Turn off the player</h3>
 		</div>
 		<div class="modal-body">
-			<button id="syscmd-poweroff" name="syscmd" value="poweroff" class="btn btn-primary btn-large btn-block"><i class="fa fa-power-off sx"></i> Power off</button>
-			<button id="syscmd-reboot" name="syscmd" value="reboot" class="btn btn-primary btn-large btn-block"><i class="fa fa-refresh sx"></i> Reboot</button>
+			<button id="syscmd-poweroff" name="syscmd" value="poweroff" class="btn btn-primary btn-large btn-block"><i class="fa fa-power-off sx"></i> Power off (Выключить плеер)</button>
+			<button id="syscmd-reboot" name="syscmd" value="reboot" class="btn btn-primary btn-large btn-block"><i class="fa fa-refresh sx"></i> Reboot (Перезагрузить плеер)</button>
 		</div>
 		<div class="modal-footer">
 			<button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
@@ -20,13 +20,17 @@
 			<h3 id="service-menu-modal">Service Menu</h3>
 		</div>
 		<div class="modal-body">
+			<p>Сервисные функции </p>
 			<button id="check-and-space" name="Check internal disk" formtarget="_blank" formaction="chec.php" class="btn btn-primary  btn-block"><i class=""></i>Выполнить проверку внутреннего жесткого диска</button>
 			<button id="force-remove-samba" name="Forced Remove Network Mount" formtarget="_blank" formaction="del.php" class="btn btn-primary  btn-block"><i class=""></i>Принудительное удаление сетевых дисков</button>
+			<button id="force-stop-web" name="Stop Web V.A.M.P. " formtarget="_blank" formaction="stopweb.php" class="btn btn-primary  btn-block"><i class=""></i><font color="red">Выключить WEB-интерфейс</font></button>
+			<p>Функции обвновления </p>
+			<button id="update-git-hub" name="Update Git Hub" formtarget="_blank" formaction="update.php" class="btn btn-primary btn-block"><i class=""></i><font color="green">Установка обновлений интерфейса</font></button>
 			<button id="install-mDNS" name="mDNS add" formtarget="_blank" formaction="apple.php" class="btn btn-primary  btn-block"><i class=""></i>Установка дополнений для apple</button>
-			<button id="update-kernel" onclick="return confirm('Вы действительно хотите обновить ядро Linux? В случае возникновения сбоев при обновлении, возможен полный отказ системы!')" name="Update Kernel" formtarget="_blank" formaction="kernel_update.php" class="btn btn-primary  btn-block"><i class=""></i> <font color="red">Обновить ядро Linux</font></button>
-			<button id="update-git-hub" name="Update Git Hub" formtarget="_blank" formaction="update.php" class="btn btn-primary btn-block"><i class=""></i>Установка обновлений интерфейса</button>
 			<button id="update-git-mpd" name="Update MPD" formtarget="_blank" formaction="update-mpd.php" class="btn btn-primary btn-block"><i class=""></i>Установка обновлений плеера MPD</button>
-			<button target="_blank" id=" site" name="V.A.M.P." formtarget="_blank" formaction="http://digitall.in.ua/forum/?view=forum&id=1" class="btn btn-block"><i class=""></i>Посетить форум поддержки V.A.M.P.</button>
+			<button id="update-kernel" onclick="return confirm('Вы действительно хотите обновить ядро Linux? В случае возникновения сбоев при обновлении, возможен полный отказ системы!')" name="Update Kernel" formtarget="_blank" formaction="kernel_update.php" class="btn btn-primary  btn-block"><i class=""></i> <font color="red">Обновить ядро Linux</font></button>
+			<p>Полезные ссылки</p>
+			<button target="_blank" id=" site" name="V.A.M.P." formtarget="_blank" formaction="http://digitall.in.ua/forum/topic/%D0%B8%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F-%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B9/" class="btn btn-block"><i class=""></i>Посмотреть список обновлений плеера</button>
 		</div>
 		<div class="modal-footer">
 			<button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
