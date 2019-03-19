@@ -15,6 +15,10 @@
 				Changes how your Volumio device is called. This affects Player Name, Airplay Name and UPnP Name. A reboot is required for 
 				changes to take effect.
 			</p>
+			<p>
+				Указано имя плеера в сети. Это влияет на имя в строке баузера, сервера и для UPnP. Для вступления изменений в силу требуется перезагрузка. 
+				Крайне не рекомендуется изменять!!
+			</p>
 		<div class="form-actions">
 				<button class="btn btn-primary btn-large" value="apply" name="apply" type="submit">Apply</button>
 			</div>
@@ -24,7 +28,10 @@
 		<fieldset>
 			<legend>Services management</legend>
 			<p>Enable or disable certain Volumio functionalities</p>
+			<br>
 			<div class="control-group">
+			<p>Если вы не пользуетесь Airplay (например толлько BubleUPNP) то для меньшей нагрузки на плеер
+			рекомендуется данную опцию отключить!!</p>
 				<label class="control-label">Airplay</label>
 				<div class="controls">
 					<div class="toggle">
@@ -40,6 +47,9 @@ $_system_select[shairport0]
 				</div>
 			</div>
 			<div class="control-group">
+			<p>Если вы хотите воспроизводить музыку с музыкальногого сервера (например OMV) на V.A.M.P. 
+			например через приложение BubleUPNP для смарфона, 
+			необходимо данную опцию включить!!</p>
 				<label class="control-label">UPNP Control</label>
 				<div class="controls">
 					<div class="toggle">
@@ -55,6 +65,13 @@ $_system_select[upnpmpdcli0]
 				</div>
 			</div> 
 			<div class="control-group">
+			<p>Если вы хотите предоставлять музыку, которая находится на плеере  V.A.M.P. другим плеерам (например 
+			есть андроид приставка или какой-то плеер, которому нужны музыкальные файлы, что находятся на плеере
+			V.A.M.P. и через протокол UPNP\DLNA), то можно включить две опции ниже. UPNP\DLNA Indexing - делает индексацию файлов UPNP,
+			DLNA Library Server - предоставляет доступ к внешним устройствам.
+			Не рекомендуется, так как сильно нагружает процессор плеера. Настраивайте доступ к музыке V.A.M.P. не через UPNP\DLNA, а через SMB протокол 					
+			</p>
+			<p><a href="https://wiki.infomir.eu/rus/set-top-box/stb-linux-webkit/vstroennyj-portal/dostup-k-obshchim-resursam-komp-yutera-ms-windows-protokol-samba" target="_blank">Что такое SAMBA</a></p>
 				<label class="control-label">UPNP\DLNA Indexing</label>
 				<div class="controls">
 					<div class="toggle">
@@ -123,7 +140,9 @@ $_system_select[startupsound0]
 			<p>
 				These profiles include a set of performance tweaks that act on some system kernel parameters.<br>
 				You can select the ECO-MODE for reduced power consumption.
-				
+			</p>
+			<p>
+			Вы можете выбрать ЭКО-РЕЖИМ для снижения энергопотребления (например в очень жаркую погоду, или в слабо охлаждаемом помещении).
 			</p>
 			<div class="control-group">
 				<label class="control-label">Kernel profile</label>
@@ -203,7 +222,7 @@ $_system_select[cmediafix0]
 			<div class="fileupload fileupload-new" data-provides="fileupload">
 					  <span class="btn btn-file"><span class="fileupload-new">restore</span><span class="fileupload-exists">Change</span><input type="file" /></span>
 					  <span class="fileupload-preview"></span>
-					  <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">×</a>
+					  <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">?</a>
 					</div>
 
 				</div>
