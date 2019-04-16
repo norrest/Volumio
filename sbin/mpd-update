@@ -10,6 +10,7 @@ if [ "$mpdver" -ne "$newver" ];
 then
 echo "Обновление MPD"
 cd /root/
+apt-get install --force-yes -y libupnp6-dev
 curl -O http://digitall.in.ua/mpd.tar.bz2
 mkdir ./mpd
 tar -xjvf mpd.tar.bz2 -C ./mpd
