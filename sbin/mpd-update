@@ -1,4 +1,7 @@
 #! /bin/sh
+apt-get update
+apt-get -y -o Dpkg::Options::="--force-confold" -o Dpkg::Options::="--force-confold" install upmpdcli --force-yes
+apt-get -y -o Dpkg::Options::="--force-confold" -o Dpkg::Options::="--force-confold" install libupnp6-dev --force-yes
 mpdver="$(mpd -V | grep Music | cut -d "0" -f 2,3)" 
 mpdver="${mpdver%.*-*}"        # remove suffix starting with '.' and containing '-'
 mpdver="${mpdver//.}"          # remove periods (a single `/` would do here)
@@ -10,7 +13,6 @@ if [ "$mpdver" -ne "$newver" ];
 then
 echo "Обновление MPD"
 cd /root/
-apt-get install --force-yes -y libupnp6-dev
 curl -O http://digitall.in.ua/mpd.tar.bz2
 mkdir ./mpd
 tar -xjvf mpd.tar.bz2 -C ./mpd
