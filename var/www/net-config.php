@@ -244,30 +244,30 @@ if (!empty($ipwlan0)) {
 	$_eth0 .= "</br>\n";
 	
 	$_eth0 .= "<div><font size=3 color=#100f40>Версия прошивки WEB-интерфейса (VAMP ver.):</font> </div>\n";
-	$_eth0 .= "<div><b> ".$webver." </b></div>\n";   
+	$_eth0 .= "<div> ".$webver."</div>\n";   
 	$_eth0 .= "</br>\n";  
 	
 	$_eth0 .= "<div><font size=3 color=#100f40>Идентификатор USB:</font> </div>\n";
-	$_eth0 .= "<div><b> ".$status_usb." </b></div>\n";
+	$_eth0 .= "<div> ".$status_usb." </div>\n";
 	$_eth0 .= "</br>\n";
 	
 	$_eth0 .= "<div><font size=3 color=#100f40 >Информация о ЦАП-е (Dac Info):</font></div>\n";
-	$_eth0 .= "<div><b></b> ".$dacinfo."</div>\n";
+	$_eth0 .= "<div> ".$dacinfo."</div>\n";
 	$_eth0 .= "<div>Скорость подключения USB: ".$dacspeed."</div>\n";
 	$_eth0 .= "<div> ".$status." </div>\n";	
-	$_eth0 .= "<div><b></b> ".$alsa_rate."</div>\n";
-	$_eth0 .= "<div><b> ".$status_dsd." </b></div>\n";
+	$_eth0 .= "<div>Частота дискретизации(Sampling rate): ".$alsa_rate."</div>\n";
+	$_eth0 .= "<div>Режим DSD_Native: ".$status_dsd." </div>\n";
 	$_eth0 .= "</br>\n";
 
 	$_eth0 .= "<div><font size=3 color=#100f40>Информация о ядре (Kernel Info):</font> </div>\n";
-	$_eth0 .= "<div><b>".$kernelver."</b></div>\n";
+	$_eth0 .= "<div>".$kernelver."</div>\n";
 	$_eth0 .= "<div><font size=2 color=#100f40>Информация о библиотеке звука (Alsa lib Info):</font> </div>\n";
-	$_eth0 .= "<div><b>".$alsalibver."</b></div>\n";
+	$_eth0 .= "<div>".$alsalibver."</div>\n";
 	$_eth0 .= "</br>\n";
 	
 	$_eth0 .= "<div><font size=3 color=#100f40>Информация о музыкальном проигрывателе (MPD Info):</font> </div>\n";
-	$_eth0 .= "<div><b>".$mpdver."</b></div>\n";
-	$_eth0 .= "<div><b></b> ".$mpdinfo."</div>\n";
+	$_eth0 .= "<div>".$mpdver."</div>\n";
+	$_eth0 .= "<div>".$mpdinfo."</div>\n";
 	$_eth0 .= "</br>\n";
 	
 	$_eth0 .= "<div><font size=3 color=#100f40>Информация о подключенных дисках (DISK INFO):</font> </div>\n";
@@ -278,14 +278,14 @@ if (!empty($ipwlan0)) {
 	$_eth0 .= "</br>\n";	
 	
 	$_eth0 .= "<div><font size=3 color=#100f40>Информация о сети (LAN INFO):</font> </div>\n";
-	$_eth0 .= "<div><b>Status:</b>   ".$statuset."</div>\n";
-	$_eth0 .= "<div><b>IP address:</b>   ".$ipeth0."</div>\n";
-    $_eth0 .= "<div><b>Speed:</b> ".$speth0."</div>\n";
+	$_eth0 .= "<div>Status:   ".$statuset."</div>\n";
+	$_eth0 .= "<div>IP address:   ".$ipeth0."</div>\n";
+    $_eth0 .= "<div>Speed: ".$speth0."</div>\n";
 	$_eth0 .= "</br>\n";
 	
 	$_eth0 .= "<div><font size=3 color=#100f40>Информация о процессоре (CPU INFO):</font> </div>\n";	
-	$_eth0 .= "<div><b>Load %:</b> ".$cpuload."</div>\n";
-	$_eth0 .= "<div><b>Temp °C:</b> ".$cputemp."</div>\n";
+	$_eth0 .= "<div>Load %: ".$cpuload."</div>\n";
+	$_eth0 .= "<div>Temp °C: ".$cputemp."</div>\n";
 #	$_eth0 .= "<div><b>Freq:</b> ".$cpufreq."</div>\n";
 	$_eth0 .= "</div>\n";
     }
