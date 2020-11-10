@@ -1,7 +1,12 @@
 #! /bin/sh
 print "Content-Type: text/html\n\n";
+mpc stop
 mpc clear
-mpc stop;systemctl stop mpd.socket;killall -s 9 mpd;/etc/init.d/mpd stop
+mpc stop;systemctl stop mpd.socket;/etc/init.d/mpd stop
+sudo umount -f /mnt/NAS
+sudo umount -l /mnt/NAS
+sudo umount -f /mnt/NAS/
+sudo umount -l /mnt/NAS/
 sudo umount -f /mnt/NAS/*
 sudo umount -l /mnt/NAS/*
 sudo rm -r /mnt/NAS*
