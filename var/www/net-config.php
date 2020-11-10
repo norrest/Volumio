@@ -202,14 +202,14 @@ $cputemp = substr(shell_exec('cat /sys/class/thermal/thermal_zone0/temp'), 0, 2)
 $cpufreq = (float)shell_exec('cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq');
 $mpderrors = shell_exec(" mpc | grep  ERROR");
 $dacinfo = shell_exec("cat /proc/asound/* | grep USB");
-$dacspeed = shell_exec("cat /proc/asound/* | grep speed | grep usb");
+$dacspeed = shell_exec("cat /proc/asound/* | grep -Eo '.{0,6}speed{0,6}'");
 $status = shell_exec("cat /proc/asound/card*/* | grep Status");
 $status_dsd = shell_exec("cat /proc/asound/card*/pcm*p/sub*/* | grep DSD");
 $status_usb = shell_exec("lsusb | grep -v Linux");
-$mpdinfo = shell_exec("service mpd status | grep Ac");
+$mpdinfo = shell_exec("service mpd status | grep -Eio '(\S+\s+){,5}Active(\s+\S+){,5}'");
 $mpdver = shell_exec("mpd -V | grep Music");
 $kernelver = shell_exec("uname -a");
-$alsalibver = shell_exec("grep VERSION_STR /usr/include/alsa/version.h");
+$alsalibver = shell_exec("grep -Eio '(\S+\s+){,5}VERSION_STR(\s+\S+){,5}' /usr/include/alsa/version.h");
 $alsa_rate = shell_exec("cat /proc/asound/card*/pcm*p/sub*/* | grep rate");
 $free_space_usb = shell_exec("df -h | grep /mnt/USB");
 $free_space_nas= shell_exec("df -h --output=source | grep // ");
@@ -241,39 +241,46 @@ if (!empty($ipwlan0)) {
     $_eth0 .= "<div class=\"alert alert-info\">\n";
 	$_eth0 .= "<div><b><font color=#ff0000 size=3>".$mpderrors."</b></font></div>\n";
 	$_eth0 .= "</br>\n";
-	$_eth0 .= "<div><font size=3 color=#100f40 ><b>DAC INFO:</b></font></div>\n";
+	
+	$_eth0 .= "<div><font size=3 color=#100f40>Идентификатор USB:</font> </div>\n";
+	$_eth0 .= "<div><b> ".$status_usb." </b></div>\n";
+	$_eth0 .= "</br>\n";
+	
+	$_eth0 .= "<div><font size=3 color=#100f40 >Информация о ЦАП-е (Dac Info):</font></div>\n";
 	$_eth0 .= "<div><b></b> ".$dacinfo."</div>\n";
-	$_eth0 .= "<div><b></b> ".$dacspeed."</div>\n";
-	$_eth0 .= "<div><b></b> ".$alsa_rate."</div>\n";
+	$_eth0 .= "<div>Скорость подключения USB: ".$dacspeed."</div>\n";
 	$_eth0 .= "<div> ".$status." </div>\n";	
+	$_eth0 .= "<div><b></b> ".$alsa_rate."</div>\n";
 	$_eth0 .= "<div><b> ".$status_dsd." </b></div>\n";
 	$_eth0 .= "</br>\n";
-	$_eth0 .= "<div><font size=3 color=#100f40><b>Kernel INFO:</b></font> </div>\n";
+
+	$_eth0 .= "<div><font size=3 color=#100f40>Информация о ядре (Kernel Info):</font> </div>\n";
 	$_eth0 .= "<div><b>".$kernelver."</b></div>\n";
-	$_eth0 .= "<div><font size=3 color=#100f40><b>Alsa lib INFO:</b></font> </div>\n";
+	$_eth0 .= "<div><font size=2 color=#100f40>Информация о библиотеке звука (Alsa lib Info):</font> </div>\n";
 	$_eth0 .= "<div><b>".$alsalibver."</b></div>\n";
 	$_eth0 .= "</br>\n";
-	$_eth0 .= "<div><font size=3 color=#100f40><b>MPD INFO:</b></font> </div>\n";
+	
+	$_eth0 .= "<div><font size=3 color=#100f40>Информация о музыкальном проигрывателе (MPD Info):</font> </div>\n";
 	$_eth0 .= "<div><b>".$mpdver."</b></div>\n";
 	$_eth0 .= "<div><b></b> ".$mpdinfo."</div>\n";
 	$_eth0 .= "</br>\n";
-	$_eth0 .= "<div><font size=3 color=#100f40><b>DISK INFO:</b></font> </div>\n";
-	$_eth0 .= "<div>SATA диск общий размер,доступно:</div>\n";
+	
+	$_eth0 .= "<div><font size=3 color=#100f40>Информация о подключенных дисках (DISK INFO):</font> </div>\n";
+	$_eth0 .= "<div><font size=3>SATA диск (общий размер, доступно):</font></div>\n";
 	$_eth0 .= "<div>".$free_space_usb."</div>\n";
-	$_eth0 .= "<div>NAS примонтированный диск(и):</div>\n";
+	$_eth0 .= "<div><font size=3>Примонтированные серверные диск(и):</font></div>\n";
 	$_eth0 .= "<div>".$free_space_nas."</div>\n";
 	$_eth0 .= "</br>\n";	
-	$_eth0 .= "<div><font size=3 color=#100f40><b>USB INFO:</b></font> </div>\n";
-	$_eth0 .= "<div><b> ".$status_usb." </b></div>\n";
-	$_eth0 .= "</br>\n";
-	$_eth0 .= "<div><font size=3 color=#100f40><b>LAN INFO:</b></font> </div>\n";
+	
+	$_eth0 .= "<div><font size=3 color=#100f40>Информация о сети (LAN INFO):</font> </div>\n";
 	$_eth0 .= "<div><b>Status:</b>   ".$statuset."</div>\n";
 	$_eth0 .= "<div><b>IP address:</b>   ".$ipeth0."</div>\n";
     $_eth0 .= "<div><b>Speed:</b> ".$speth0."</div>\n";
 	$_eth0 .= "</br>\n";
-	$_eth0 .= "<div><font size=3 color=#100f40><b>CPU INFO:</b></font> </div>\n";	
+	
+	$_eth0 .= "<div><font size=3 color=#100f40>Информация о процессоре (CPU INFO):</font> </div>\n";	
 	$_eth0 .= "<div><b>Load %:</b> ".$cpuload."</div>\n";
-#	$_eth0 .= "<div><b>Temp °C:</b> ".$cputemp."</div>\n";
+	$_eth0 .= "<div><b>Temp °C:</b> ".$cputemp."</div>\n";
 #	$_eth0 .= "<div><b>Freq:</b> ".$cpufreq."</div>\n";
 	$_eth0 .= "</div>\n";
     }
