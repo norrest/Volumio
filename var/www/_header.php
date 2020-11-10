@@ -89,9 +89,9 @@
 			<li class="<?php ami('sources'); ?>"><a href="sources.php"><i class="fa fa-folder-open sx"></i>Library / Библиотека</a></li>
 			<li class="<?php ami('mpd-config'); ?>"><a href="mpd-config.php"><i class="fa fa-cogs sx"></i>Playback / Настройка </a></li>
 			<li><a href="#service-menu-modal" data-toggle="modal" ><i class="fa fa-cogs sx"></i>Service Menu / Сервис </a></li>
-			<li class="<?php ami('net-config'); ?>"><a href="net-config.php"><i class="fa fa-sitemap sx"></i>V.A.M.P. Info / Статус </a></li>
 			<li class="<?php ami('settings'); ?>"><a href="settings.php"><i class="fa fa-wrench sx"></i>System / Система</a></li>
 			<li><a href="#poweroff-modal" data-toggle="modal"><i class="fa fa-power-off sx"></i>Turn off / Отключение</a></li>
+			<li class="<?php ami('net-config'); ?>"><a style="color:#ffff00" href="net-config.php"><i class="fa fa-sitemap sx"></i>V.A.M.P. Info / Статус </a></li>
 			<form method="post"><button id="stop-all" name="stop-all" class="btn btn-cmd" >Restart MPD</button></form>
 		</ul>
 	</div>
