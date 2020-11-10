@@ -1,5 +1,5 @@
 <div class="container credits">
-	<h1>NAS mounts</h1>	
+	<h1>Добавленние сетевой папки (NAS mounts)</h1>	
 	<form class="form-horizontal" data-validate="parsley" action="sources.php" method="post">
 		<fieldset>
 			<legend>$_title  <span class=" $_hide ">(<button type="submit" class="btn btn-link btn-nobtn" name="delete" value="1">remove this mount</button>)</span></legend>
@@ -8,16 +8,17 @@
 			<i class='icon-remove red sx'></i> Last system mount error</br>
 			$_error
 			</div>
-				<label class="control-label" for="nas-name">Source name</label>
+				<label class="control-label" for="nas-name">Имя для сохранения папки (Source name)</label>
 				<div class="controls">
-					<input class="input-large" class="input-large" type="text" id="nas-name" name="mount[name]" value="$_name" data-trigger="change" placeholder="es: Classical">
+					<input class="input-large" class="input-large" type="text" id="nas-name" name="mount[name]" value="$_name" data-trigger="change" placeholder="например: MUSIC_01_JAZZ">
 					<input type="hidden" name="mount[id]" value="$_id">
 					<input type="hidden" name="mount[action]" value="$_action">
+					<span class="help-block">Имя, которое вы хотите дать этому источнику. Он появится в древовидной структуре вашей базы данных. Русские символы и пробелы использовать запрещено. Название можно придумать любое</span>
 					<span class="help-block">The name you want to give to this source. It will appear in your database tree structure</span>
 				</div>
 			</div>
 			<div class="control-group" >
-					<label class="control-label" for="nas-type">fileshare protocol</label>
+					<label class="control-label" for="nas-type">Протокол. Менять не надо. (fileshare protocol) </label>
 					<div class="controls">
 						<select id="type" name="mount[type]" class="input-large">
 
@@ -30,40 +31,46 @@
 			<div class="control-group" >
 				<label class="control-label" for="nas-ip">IP address</label>
 				<div class="controls">
-					<input class="input-large" class="input-large" type="text" id="nas-ip" name="mount[address]" value="$_address" data-trigger="change" placeholder="es: 192.168.1.250">
+					<input class="input-large" class="input-large" type="text" id="nas-ip" name="mount[address]" value="$_address" data-trigger="change" placeholder="например: 192.168.1.250">
+					<span class="help-block">Укажите IP-адрес вашего сервера. Без пробелов, букв и другого мусора. Только цифры и точки. Например -  192.168.1.223 Для поиска IP - сервера, можно воспользоваться софтом <a target="_blank" href="https://www.advanced-ip-scanner.com/ "> www.advanced-ip-scanner.com </a> </span>
 					<span class="help-block">Specify your NAS address</span>
 				</div>
 			</div>
 			<div class="control-group" >
-				<label class="control-label" for="nas-dir">Remote directory</label>
+				<label class="control-label" for="nas-dir">Удаленная папка на сервере (Remote directory)</label>
 				<div class="controls">
-					<input class="input-large" class="input-large" type="text" id="nas-dir" name="mount[remotedir]" value="$_remotedir" data-trigger="change" placeholder="es: Music/Classical" >
+					<input class="input-large" class="input-large" type="text" id="nas-dir" name="mount[remotedir]" value="$_remotedir" data-trigger="change" placeholder="например: Music/Classical" >
+					<span class="help-block">Укажите имя каталога на NAS, где сканировать музыкальные файлы (с учетом регистра). IP-адрес сюда не вводится. Например - Music/DSD </span>
 					<span class="help-block">Specify the directory name on the NAS where to scan music files (case sensitive)</span>
 				</div>
 			</div>
 			<div class="control-group" >
-				<label class="control-label" for="nas-usr">Username</label>
+				<label class="control-label" for="nas-usr">Имя пользователя (Username)</label>
 				<div class="controls">
 					<input class="input-large" class="input-large" type="text" id="nas-usr" name="mount[username]" value="$_username" data-trigger="change" placeholder="user" >
+					<span class="help-block">При необходимости укажите имя пользователя для предоставления доступа к NAS (с учетом регистра)</span>
 					<span class="help-block">If required, specify username to grant access to the NAS (case sensitive)</span>
 				</div>
 			</div>
 			<div class="control-group" >
-				<label class="control-label" for="nas-pasw">Password</label>
+				<label class="control-label" for="nas-pasw">Пароль (Password)</label>
 				<div class="controls">
 					<input class="input-large" class="input-large" type="password" id="nas-pasw" name="mount[password]" value="$_password" placeholder="pass" autocomplete="off">
+					<span class="help-block">При необходимости укажите пароль для предоставления доступа к NAS (с учетом регистра)</span>
 					<span class="help-block">If required, specify password to grant access to the NAS (case sensitive)</span>
+					
 				</div>
 			</div>
-			<p><a href="#notarget" class="show-advanced-config"><i class="fa fa-plus"></i> <span>show advanced options</span></a></p>
+			<p><a href="#notarget" class="show-advanced-config"><i class="fa fa-plus"></i> <span>Показать дополнительные настройки (show advanced options)</span></a></p>
 			<div class="advanced-config hide">
 				<div class="control-group" >
-					<label class="control-label" for="nas-charset">Charset</label>
+					<label class="control-label" for="nas-charset">Кодировка (Charset)</label>
 					<div class="controls">
 						<select id="log-level" name="mount[charset]" class="input-large">
 							<option value="utf8" $_charset>UTF8 (default)</option>
 							<option value="iso8859-1" $_charset>ISO 8859-1</option>
 						</select>
+						<span class="help-block">Измените эти настройки, если у вас возникли проблемы с кодировкой символов. Обычно не меняется</span>
 						<span class="help-block">Change this settings if you experience problems with character encoding</span>
 					</div>
 				</div>
@@ -71,6 +78,7 @@
 					<label class="control-label" for="nas-rsize">Rsize</label>
 					<div class="controls">
 						<input class="input-large" class="input-large" type="text" id="nas-rsize" name="mount[rsize]" value="$_rsize" data-trigger="change" placeholder="32192" >
+						<span class="help-block">Измените эти настройки, если у вас возникли проблемы с воспроизведением музыки (например, треки или клипы). Настройки оптимальные, изменения не требуются.</span>
 						<span class="help-block">Change this settings if you experience problems with music playback (es: pops or clips)</span>
 					</div>
 				</div>
@@ -78,14 +86,17 @@
 					<label class="control-label" for="nas-wsize">Wsize</label>
 					<div class="controls">
 						<input class="input-large" class="input-large" type="text" id="nas-wsize" name="mount[wsize]" value="$_wsize" data-trigger="change" placeholder="32384" >
+						<span class="help-block">Измените эти настройки, если у вас возникли проблемы с воспроизведением музыки (например, треки или клипы). Настройки оптимальные, изменения не требуются.</span>
 						<span class="help-block">Change this settings if you experience problems with music playback (es: pops or clips)</span>
 					</div>
 				</div>
 				<div class="control-group" >
-					<label class="control-label" for="options">Mount flags</label>
+					<label class="control-label" for="options">Дополнительные парамерты  монтирования (Mount flags)</label>
 					<div class="controls">
 						<input class="input-large" class="input-large" type="text" id="options" name="mount[options]" value="$_options" data-trigger="change" placeholder="ro,noatime">
 						<input type="hidden" name="mount[error]" value="$_error">
+						<span class="help-block">Расширенные флаги монтирования. Не используйте это поле, если не знаете, что делаете.</span>
+						<span style="color:#ffff00" class="help-block">После атаки вируса «Петя», для связи с серверами на некоторых обновленных ПК с Windows, необходимо указывать другую версию протокола SMB, через добавление параметра vers=2.0 (Читал в интернете, что иногда даже приходится добавлять vers=1.0 или даже vers=2.0)</span>
 						<span class="help-block">Advanced mount flags. Don't use this field if you don't know what you are doing.</span>
 					</div>
 				</div>
