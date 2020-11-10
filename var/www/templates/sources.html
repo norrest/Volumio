@@ -6,22 +6,22 @@
 		<p><button class="btn btn-large btn-primary" type="submit" name="updatempd" value="1" id="updatempddb"><i class="fa fa-refresh sx"></i>Полное обновление библиотеки</button></p>
 		<br>
 		<p><button class="btn btn-large" formaction="stop.php" >Принудительная остановка обновления (После нажатия подождите пару минут)</button></p>
-		<p><button class="btn btn-large" formaction="delete.php" >Удалить все сетевые внешние диски</button></p>
-		
-		
-	</form>
+		<span class="help-block">Необходимо использовать в ситуациях, когда была примонтирована сетевая папка с очень большим обьемом, или файлами, которые плеер MPD не может проиндексировать и происходит бесконечное обновление библиотеки. Требуется нажать эту кнопку и изменить\отредактировать сетевые папки на сервере -  выбрать другую папку для монтирования и/или перенести не индексируемые файлы на другой диск. </span>
+		<p><button class="btn btn-large" formaction="delete.php"> Принудительное удаление сетевых дисков </button></p>
+		<span class="help-block"> Необходимо использовать в ситуациях, когда при добавлении сетевых папок были допущены критические ошибки, в следствии чего плеер постоянно пытается выполнить подключение данных папок, но даже редактирование настроек не помогает - все зависает.</span>
+		</form>
 		<div class="form-actions">V.A.M.P. creates and updates its music database via the following source directories:</a>
 		<br>
 		</div>
 	<div class="tile txtsx">
 		<p> Плеер создает и обновляет свою музыкальную базу данных, через следующие исходные каталоги: </p>
-				<ul>
-			<li><strong>NAS</strong><br><span class="help-block">This section contains all your connected network shares. (SAMBA/NFS etc.)</span></li>
-			<li><strong>USB</strong><br><span class="help-block">Locally connected SATA HDD or SSD drives.</span></li>
-			<li><strong>WebRadio</strong><br><span class="help-block">Locally stored web radio playlists.</span></li>
+		<ul>
+			<li><strong>USB</strong><br><span class="help-block">Локально подключенные жесткие диски SATA или твердотельные накопители. Исторически сложилось, что для Volumio это называется USB (Locally connected SATA HDD or SSD drives.)</span></li>
+			<li><strong>WebRadio</strong><br><span class="help-block">Сохраненные локально плейлисты веб-радио.(Locally stored web radio playlists.)</span></li>
+			<li><strong>NAS</strong><br><span class="help-block">Этот раздел содержит все ваши подключенные сетевые ресурсы (This section contains all your connected network shares. (SAMBA/NFS etc.))</span></li>
 		</ul>
 	</div>
-	
+	`
 	<h2>NAS mounts</h2>
 	<p>List of configured network mounts (click to edit)</p>
 	<form method="post">
