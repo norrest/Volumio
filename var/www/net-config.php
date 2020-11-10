@@ -208,6 +208,7 @@ $status_dsd = shell_exec("cat /proc/asound/card*/pcm*p/sub*/* | grep DSD");
 $status_usb = shell_exec("lsusb | grep -v Linux");
 $mpdinfo = shell_exec("service mpd status | grep -Eio '(\S+\s+){,5}Active(\s+\S+){,5}'");
 $mpdver = shell_exec("mpd -V | grep Music");
+$webver =  shell_exec("cat /etc/VAMP_VER");
 $kernelver = shell_exec("uname -a");
 $alsalibver = shell_exec("grep -Eio '(\S+\s+){,5}VERSION_STR(\s+\S+){,5}' /usr/include/alsa/version.h");
 $alsa_rate = shell_exec("cat /proc/asound/card*/pcm*p/sub*/* | grep rate");
@@ -241,6 +242,10 @@ if (!empty($ipwlan0)) {
     $_eth0 .= "<div class=\"alert alert-info\">\n";
 	$_eth0 .= "<div><b><font color=#ff0000 size=3>".$mpderrors."</b></font></div>\n";
 	$_eth0 .= "</br>\n";
+	
+	$_eth0 .= "<div><font size=3 color=#100f40>Версия прошивки WEB-интерфейса (VAMP ver.):</font> </div>\n";
+	$_eth0 .= "<div><b> ".$webver." </b></div>\n";   
+	$_eth0 .= "</br>\n";  
 	
 	$_eth0 .= "<div><font size=3 color=#100f40>Идентификатор USB:</font> </div>\n";
 	$_eth0 .= "<div><b> ".$status_usb." </b></div>\n";
