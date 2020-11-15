@@ -4,7 +4,7 @@
 ##The ALSA Library package contains the ALSA library used by programs (including ALSA Utilities) requiring access to the ALSA sound interface.
 ##This is an important component, as previously DSD Native support required updating these libraries.
 alsalibver="$(grep VERSION_STR /usr/include/alsa/version.h | sed -e 's/[^0-9]//g')"
-newveralsalib='124'
+newveralsalib='123'
 rm -R alsa-li*
 if [[ $alsalibver != $newveralsalib ]];
 then
@@ -14,9 +14,9 @@ echo "need to update"
 ## you can find info about ALSA at home page https://www.alsa-project.org/main/index.php/Main_Page
 ## relese info https://www.alsa-project.org/main/index.php/Changes_v1.1.6_v1.1.7 
 apt-get install automake libtool
-curl -O ftp://ftp.alsa-project.org/pub/lib/alsa-lib-1.2.4.tar.bz2
-tar xvjf alsa-lib-1.2.4.tar.bz2
-cd alsa-lib-1.2.4
+curl -O ftp://ftp.alsa-project.org/pub/lib/alsa-lib-1.2.3.tar.bz2
+tar xvjf alsa-lib-1.2.3.tar.bz2
+cd alsa-lib-1.2.3
 ./configure
 make install
 else
