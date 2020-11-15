@@ -32,6 +32,7 @@ sudo cp -pfR /update/tmpi/50x.html /etc/nginx/html/
 sudo bash /sbin/dbupdate
 apt-get -y update
 apt-get -y install ethtool
+apt-get -y install dos2unix
 sleep 1
 #optionally remove git just to clean things up.
 sudo rm -R /update/tmpi
