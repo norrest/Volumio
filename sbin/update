@@ -44,9 +44,12 @@ sudo chmod -R 777 /var/lib/mpd/music/WEBRADIO/
 /etc/init.d/mpd start
 echo "$(tput setaf 1)[+] If you see no errors, everything is done perfectly!"
 sudo service php5-fpm restart && sudo service nginx restart
-echo "If you see many errors, please contact admin@digitall.in.ua"   
+echo "If you see many errors, please contact admin@digitall.in.ua"
+sudo rm -R /update/tmpi
 else
-echo "old ver, please contact admin@digitall.in.ua"   
+echo "old ver, please contact admin@digitall.in.ua"  
+sudo rm -R /update/tmpi
 fi
 echo "finished" 
+sudo rm -R /update/tmpi
 exit 0
