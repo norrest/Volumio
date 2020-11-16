@@ -1,15 +1,17 @@
 #!/bin/bash
 ver="$(uname -r  | sed -e 's/[^0-9]//g')"  # get kernel release version
-latestver="502"
+latestver="51003"
 echo "$b"
 if [ "$ver" != "$latestver" ];
 then
 echo "Нужно обновить ядро!"
 rm -R *.deb
-curl -O http://digitall.in.ua/vamp/linux-image-dev-sunxi_5.77_armhf.deb
-curl -O http://digitall.in.ua/vamp/linux-dtb-dev-sunxi_5.77_armhf.deb
-curl -O http://digitall.in.ua/vamp/linux-headers-dev-sunxi_5.77_armhf.deb
-dpkg -i linux-image-dev-sunxi_5.77_armhf.deb linux-dtb-dev-sunxi_5.77_armhf.deb linux-headers-dev-sunxi_5.77_armhf.deb && reboot
+curl -O http://digitall.in.ua/vamp/linux-image-dev-sunxi_20.11.0-trunk_armhf.deb
+curl -O http://digitall.in.ua/vamp/linux-dtb-dev-sunxi_20.11.0-trunk_armhf.deb
+curl -O http://digitall.in.ua/vamp/linux-headers-dev-sunxi_20.11.0-trunk_armhf.deb
+dpkg -i linux-image-dev-sunxi_20.11.0-trunk_armhf.deb linux-dtb-dev-sunxi_20.11.0-trunk_armhf.deb linux-headers-dev-sunxi_20.11.0-trunk_armhf.deb
+rm -R *.deb
+reboot
 else 
 echo "Уже используеться последняя версия ядра linux!"
 fi
