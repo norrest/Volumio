@@ -207,9 +207,10 @@ $status = shell_exec("cat /proc/asound/card*/* | grep Status");
 $status_dsd = shell_exec("cat /proc/asound/card*/pcm*p/sub*/* | grep DSD");
 $status_usb = shell_exec("lsusb | grep -v Linux");
 $mpdinfo = shell_exec("service mpd status | grep -Eio '(\S+\s+){,5}Active(\s+\S+){,5}'");
+$rooninfo = shell_exec("service roonbridge status | grep -Eio '(\S+\s+){,5}Active(\s+\S+){,5}'");
 $mpdver = shell_exec("mpd -V | grep Music");
 $webver =  shell_exec("cat /etc/VAMP_VER");
-$kernelver = shell_exec("uname -a");
+$kernelver = shell_exec("uname -r -m -o");
 $alsalibver = shell_exec("grep -Eio '(\S+\s+){,5}VERSION_STR(\s+\S+){,5}' /usr/include/alsa/version.h");
 $alsa_rate = shell_exec("cat /proc/asound/card*/pcm*p/sub*/* | grep rate");
 $free_space_usb = shell_exec("df -h | grep /mnt/USB");
@@ -266,8 +267,12 @@ if (!empty($ipwlan0)) {
 	$_eth0 .= "</br>\n";
 	
 	$_eth0 .= "<div><font size=3 color=#100f40>Информация о музыкальном проигрывателе (MPD Info):</font> </div>\n";
+	$_eth0 .= "<div>Статус активности:".$mpdinfo."</div>\n";
 	$_eth0 .= "<div>".$mpdver."</div>\n";
-	$_eth0 .= "<div>".$mpdinfo."</div>\n";
+	$_eth0 .= "</br>\n";
+	
+	$_eth0 .= "<div><font size=3 color=#100f40>Информация о ROON BRIDGE (ROON Info):</font> </div>\n";
+	$_eth0 .= "<div>Статус активности:".$rooninfo."</div>\n";
 	$_eth0 .= "</br>\n";
 	
 	$_eth0 .= "<div><font size=3 color=#100f40>Информация о подключенных дисках (DISK INFO):</font> </div>\n";
