@@ -1,0 +1,4 @@
+#!/bin/bash
+systemctl stop roonbridge.service; systemctl disable roonbridge.service
+echo "Останавливаем сервис roonbridge только если он установлен"
+exit 0
