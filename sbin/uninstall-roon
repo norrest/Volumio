@@ -1,0 +1,11 @@
+#!/bin/bash
+echo "Удаляем сервис roonbridge"
+rm -R roon*
+yes|curl -O http://download.roonlabs.com/builds/roonbridge-installer-linuxarmv7hf.sh
+chmod +x roonbridge-installer-linuxarmv7hf.sh
+yes|sudo ./roonbridge-installer-linuxarmv7hf.sh uninstall
+
+rm -R /var/roon*
+rm -R /opt/roon*
+rm -R roon*
+exit 0
