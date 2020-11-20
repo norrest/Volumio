@@ -79,22 +79,22 @@
     }
 ?>	
 	
-	
 
 <div id="menu-top" class="ui-header ui-bar-f ui-header-fixed slidedown" data-position="fixed" data-role="header" role="banner">
 	<div class="dropdown">
 		<a class="dropdown-toggle" id="menu-settings" role="button" data-toggle="dropdown" data-target="#" href="<?php echo $sezione ?>.php">MENU <i class="fa fa-th-list dx"></i></a>
 		<ul class="dropdown-menu" role="menu" aria-labelledby="menu-settings">
-			<li class="<?php ami('index'); ?>"><a href="index.php"><i class="fa fa-play sx"></i>Main / Главное Окно</a></li>
-			<li class="<?php ami('sources'); ?>"><a href="sources.php"><i class="fa fa-folder-open sx"></i>Library / Библиотека</a></li>
-			<li class="<?php ami('mpd-config'); ?>"><a href="mpd-config.php"><i class="fa fa-cogs sx"></i>Playback / Настройка </a></li>
-			<li><a href="#service-menu-modal" data-toggle="modal" ><i class="fa fa-cogs sx"></i>Service Menu / Сервис </a></li>
-			<li class="<?php ami('settings'); ?>"><a href="settings.php"><i class="fa fa-wrench sx"></i>System / Система</a></li>
-			<li><a href="#poweroff-modal" data-toggle="modal"><i class="fa fa-power-off sx"></i>Turn off / Отключение</a></li>
-			<li class="<?php ami('net-config'); ?>"><a style="color:#ffff00" href="net-config.php"><i class="fa fa-sitemap sx"></i>V.A.M.P. Info / Статус </a></li>
-			<form method="post"><button id="stop-all" name="stop-all" class="btn btn-cmd" >Restart MPD</button></form>
+			<li class="<?php ami('index'); ?>"><a href="index.php"><i class="fa fa-play sx"></i>Main / Главное Окно Плеера</a></li>
+			<li class="<?php ami('sources'); ?>"><a href="sources.php"><i class="fa fa-folder-open sx"></i>Library / Библиотека NAS</a></li>
+			<li class="<?php ami('mpd-config'); ?>"><a href="mpd-config.php"><i class="fa fa-cogs sx"></i>Playback / Настройка ЦАП-а</a></li>
+			<li class="<?php ami('settings'); ?>"><a href="settings.php"><i class="fa fa-wrench sx"></i>System / Настройки Системы</a></li>
+			<li><a href="#poweroff-modal" data-toggle="modal"><i class="fa fa-power-off sx"></i>Turn off / Отключение Устройства</a></li>
+			<li><a href="#service-menu-modal" data-toggle="modal" ><i class="fa fa-cogs sx"></i>Service Menu / Сервисное Меню </a></li>			
+			<li class="<?php ami('net-config'); ?>"><a style="color:#ffff00" href="net-config.php"><i class="fa fa-sitemap sx"></i>V.A.M.P. Info / Статус Плеера</a></li>
+			</br>
+			<li><a onclick="return confirm('Вы действительно хотите отключить веб-интерфейс плеера? Это полезно при использовании UPNP(BubbleUPnP, MinimServer) и ROON, где веб управление не нужно. Чтобы его включить, плеер необходимо отключить кнопкой и включить! ')" style="color:" href="stopweb.php"><i class=""></i>Отключить WEB для <span style="color:#ffff00;">Roon/UPnP</span></a></li>
 		</ul>
-	</div>
+	</div> 
 	<div class="playback-controls">	
 		<button id="previous" class="btn btn-cmd" title="Previous"><i class="fa fa-step-backward"></i></button>
 		<button id="stop" class="btn btn-cmd" title="Stop"><i class="fa fa-stop"></i></button>
