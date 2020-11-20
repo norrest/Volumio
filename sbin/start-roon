@@ -1,0 +1,4 @@
+#!/bin/bash
+systemctl start roonbridge.service; systemctl enable roonbridge.service
+echo "Запускаем сервис roonbridge только если он установлен"
+exit 0
