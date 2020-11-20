@@ -1,0 +1,12 @@
+#!/bin/bash
+echo "Устанавливаем сервис roonbridge даже если он уже был установлен"
+rm -R roon*
+yes|curl -O http://download.roonlabs.com/builds/roonbridge-installer-linuxarmv7hf.sh
+chmod +x roonbridge-installer-linuxarmv7hf.sh
+yes|sudo ./roonbridge-installer-linuxarmv7hf.sh
+sleep 3
+for file in /var/roon/RoonServer/Logs/ /var/roon/RoonBridge/Logs/ /var/roon/RAATServer/Log* /var/roon/RAATServer/Logs/RAATServer_log.txt /var/roon/RoonBridge/Logs/RoonBridge_log.txt /var/roon/RAATServer/Logs /var/roon/RAATServer/Logs/* /var/roon/RoonBridge/Logs/ /var/roon/RoonBridge/Logs/* ; do
+unlink $file
+ln -s /dev/null $file
+done
+exit 0
