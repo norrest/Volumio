@@ -9,6 +9,7 @@ hdparm -i /dev/sda
 sudo fsck -y /dev/sda1
 sudo tune2fs -m 0 /dev/sda1
 sudo mount /dev/sda1 /mnt/USB
+sudo resize2fs /dev/mmcblk0p1
 sudo mpd start
 sudo mpc start
 service mpd start
