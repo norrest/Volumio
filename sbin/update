@@ -1,12 +1,4 @@
 #! /bin/sh
-ver=$(uname -r)          # get kernel release version, e.g., "3.10.34-1-MANJARO"
-ver="${ver%.*-*}"        # remove suffix starting with '.' and containing '-'
-#ver="${ver//.}"          # remove periods (a single `/` would do here)
-#echo "$ver"
-b="4"
-#echo b
-if [ "$ver" \> "$b" ];
-then
 sudo mpc stop
 systemctl stop mpd.socket 
 sudo /etc/init.d/mpd stop
@@ -48,11 +40,5 @@ sudo chmod -R 777 /var/lib/mpd/music/WEBRADIO/
 echo "$(tput setaf 1)[+] If you see no errors, everything is done perfectly!"
 sudo service php5-fpm restart && sudo service nginx restart
 echo "If you see many errors, please contact admin@digitall.in.ua"
-sudo rm -R /update/tmpi
-else
-echo "old ver, please contact admin@digitall.in.ua"  
-sudo rm -R /update/tmpi
-fi
-echo "finished" 
 sudo rm -R /update/tmpi
 exit 0
