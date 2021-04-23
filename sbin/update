@@ -40,5 +40,4 @@ sudo chmod -R 777 /var/lib/mpd/music/WEBRADIO/
 echo "$(tput setaf 1)[+] If you see no errors, everything is done perfectly!"
 sudo service php5-fpm restart && sudo service nginx restart
 echo "If you see many errors, please contact admin@digitall.in.ua"
-sudo rm -R /update/tmpi
 exit 0
