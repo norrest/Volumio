@@ -30,6 +30,8 @@ sudo cp -pfR /update/tmpi/usr/ /
 sudo cp -pfR /update/tmpi/50x.html /usr/share/nginx/html/
 sudo cp -pfR /update/tmpi/50x.html /etc/nginx/html/
 sudo bash /sbin/dbupdate
+apt-get -f install
+apt-get -y install cifs-utils
 apt-get install debian-keyring debian-archive-keyring
 apt-get -y update
 apt-get -y install ethtool
